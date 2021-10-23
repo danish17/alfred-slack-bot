@@ -76,3 +76,10 @@ class alfredConfig {
     this.DATE_TO_MATCH_OR_TODAY = DATE;
   }
 }
+
+/**
+ * Factory method for alfredConfig class.
+ */
+function createConfig( SLACK_WEBHOOK ) {
+  return new alfredConfig( SLACK_WEBHOOK );
+}
