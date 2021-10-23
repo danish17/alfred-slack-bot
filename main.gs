@@ -26,21 +26,17 @@ const config = {
 // STOP EDITING
 
 /**
- * Generates random wish text.
  * 
- * @returns {string}
  */
-function getRandomMessage( wishType ) {
-  wishText = '';
+function generateWish( events, wishSheet, nameKey, wishType ) {
+  let wishText = '';
 
   switch( wishType ){
-    case 'birthday': wishText = getRandomBirthdayMessage();
+    case 'birthday': wishText = getRandomBirthdayMessage( wishSheet );
     break;
 
     case 'anniversary': wishText = getRandomAnniversaryMessage();
     break;
-
-    default: getRandomMessage( 'birthday' )
   }
 
   return wishText;
@@ -51,8 +47,12 @@ function getRandomMessage( wishType ) {
  * 
  * @returns {string}
  */
-function getRandomBirthdayMessage() {
-  return 'hello1';
+function getRandomBirthdayMessage( wishSheet ) {
+  let data = getValuesByColName( wishSheet, ['Text', 'Type'], true );
+  let birthdayWishes = data.filter( wish => 'Birthday' === wish['Type'] );
+  let randIdx = Math.floor((Math.random() * birthdayWishes.length) + 0);
+
+  return birthdayWishes[randIdx];
 }
 
 /**
@@ -61,6 +61,7 @@ function getRandomBirthdayMessage() {
  * @returns {string}
  */
 function getRandomAnniversaryMessage() {
+  console.log('hi')
   return 'hello1';
 }
 
@@ -138,11 +139,20 @@ function getValuesByMultiColNames( data, colNames ) {
  * 
  * @param {Array} eventsData - Array (of objects) of dates and other data.
  * @param {Object} date - Date object.
+ * @param {string} key - Name of the key for dates.
  * 
  * @returns {Array} Returns matching events.
  */
-function getEvents( eventsData, date ) {
+function getEvents( eventsData, date, key ) {
+  let todaysEvents = [];
+  eventsData.forEach( entry => {
+    let eventDate = new Date( entry[key] );
+    if ( eventDate.getMonth() === date.getMonth() && eventDate.getDate() === date.getDate() ) {
+      todaysEvents.push( entry );
+    }
+  } );
 
+  return todaysEvents;
 }
 
 /**
@@ -162,7 +172,9 @@ function main() {
   }
 
   let birthdates = getValuesByColName( data, [config.RANGES.RTCAMPERS_COLUMN, config.RANGES.DOB_COLUMN], true );
-  getEvents( birthdates, new Date().getDate ); // get today's birthdays.
+  birthdaysToday = getEvents( birthdates, new Date(), 'DOB' ); // get today's birthdays.
+
+  generateWish( birthdaysToday, text, 'rtCamper', 'birthday' );
 }
 
 main();
