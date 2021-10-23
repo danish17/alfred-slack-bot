@@ -1,9 +1,9 @@
 /**
- * Sends a Bitrhday Slack message.
+ * Sends a Slack message.
  * 
  * @param {string} message - Message to send.
  */
-function sendSlackBdayMessage( message, names ) {
+function sendSlackBdayMessage( message, names, config ) {
   var payload = {
       "blocks": [
         {
@@ -66,11 +66,11 @@ function sendSlackBdayMessage( message, names ) {
 }
 
 /**
- * Sends an Anniversary Slack message.
+ * Sends a Slack message.
  * 
  * @param {string} message - Message to send.
  */
-function sendSlackAnniversaryMessage( message, names ) {
+function sendSlackAnniversaryMessage( message, names, config ) {
   var payload = {
       "blocks": [
         {
