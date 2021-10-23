@@ -1,8 +1,9 @@
 /**
  * Main function.
  */
-function main() {
-  var sheets = SpreadsheetApp.openById( config.SHEET_ID );
+function runAlfred( config ) {
+  // var sheets = SpreadsheetApp.openById( config.SHEET_ID ); // use if you want to run it on a specific sheet.
+  var sheets = SpreadsheetApp.getActiveSpreadsheet();
   var dataSheet = sheets.getSheetByName( config.SHEET_NAMES.DATA_SHEET );
   var textSheet = sheets.getSheetByName( config.SHEET_NAMES.WISH_SHEET );
 
@@ -14,20 +15,22 @@ function main() {
     return;
   }
 
-  var birthdates = getValuesByColName( data, [config.RANGES.RTCAMPERS_COLUMN, config.RANGES.DOB_COLUMN], true );
-  var anniversaries = getValuesByColName( data, [config.RANGES.RTCAMPERS_COLUMN, config.RANGES.ANNIV_COLUMN], true );
+  var birthdates = getValuesByColName( data, [config.RANGES.NAMES_COLUMN, config.RANGES.DOB_COLUMN], true );
+  var anniversaries = getValuesByColName( data, [config.RANGES.NAMES_COLUMN, config.RANGES.ANNIV_COLUMN], true );
 
-  var birthdaysToday = getEvents( birthdates, new Date(), 'DOB' ); // get today's birthdays.
-  var anniversariesToday = getEvents( anniversaries, new Date(), 'Joining' ); // get today's anniversaries.
+  var birthdaysToday = getEvents( birthdates, config.DATE_TO_MATCH_OR_TODAY, config.RANGES.DOB_COLUMN ); // get today's birthdays.
+  var anniversariesToday = getEvents( anniversaries,config.DATE_TO_MATCH_OR_TODAY, config.RANGES.ANNIV_COLUMN ); // get today's anniversaries.
   
+  Logger.log( `Total birthdays today: ${birthdaysToday.length}` );
+  Logger.log( `Total birthdays today: ${anniversariesToday.length}` );
+
   if ( birthdaysToday.length ) {
-    let birthdayWish = generateWish( birthdaysToday, text, config.RANGES.RTCAMPERS_COLUMN, 'birthday' );
-    sendSlackBdayMessage( birthdayWish, getRecipientNames( birthdaysToday, config.RANGES.RTCAMPERS_COLUMN) );
+    let birthdayWish = generateWish( birthdaysToday, text, config.RANGES.NAMES_COLUMN, 'birthday' );
+    sendSlackBdayMessage( birthdayWish, getRecipientNames( birthdaysToday, config.RANGES.NAMES_COLUMN), config );
   }
 
   if ( anniversariesToday.length ) {
-    let anniversaryWish = generateWish( anniversariesToday, text, config.RANGES.RTCAMPERS_COLUMN, 'anniversary' );
-    sendSlackAnniversaryMessage( anniversaryWish, getRecipientNames( anniversariesToday, config.RANGES.RTCAMPERS_COLUMN) );
+    let anniversaryWish = generateWish( anniversariesToday, text, config.RANGES.NAMES_COLUMN, 'anniversary' );
+    sendSlackAnniversaryMessage( anniversaryWish, getRecipientNames( anniversariesToday, config.RANGES.NAMES_COLUMN), config );
   }
 }
-
