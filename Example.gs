@@ -1,6 +1,6 @@
 function alfredExample() {
   // Instantiate a new config object with the Slack Webhook URL.
-  var config = new alfredConfig( 'https://hooks.slack.com/services/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' );
+  var config = createConfig( 'https://hooks.slack.com/services/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' );
 
   // Set parameters.
   config.dataSheet      = 'Data'; // Set name of the sheet containing data.
