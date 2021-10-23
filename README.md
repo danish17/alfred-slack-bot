@@ -1,2 +1,2 @@
 # Alfred Slack Bot
-### Your personal slack buttler 
+### Your personal slack butler 
