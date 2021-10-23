@@ -39,6 +39,9 @@ function generateWish( events, wishSheet, nameKey, wishType ) {
     break;
   }
 
+  let names = events.map( event => event[nameKey] );
+  replaceNames( wishText, names, '<names>' ); // replace placeholder text <names> with names.
+
   return wishText;
 }
 
@@ -174,7 +177,7 @@ function main() {
   let birthdates = getValuesByColName( data, [config.RANGES.RTCAMPERS_COLUMN, config.RANGES.DOB_COLUMN], true );
   birthdaysToday = getEvents( birthdates, new Date(), 'DOB' ); // get today's birthdays.
 
-  generateWish( birthdaysToday, text, 'rtCamper', 'birthday' );
+  console.log( generateWish( birthdaysToday, text, 'rtCamper', 'birthday' ) );
 }
 
 main();
