@@ -1,24 +1,24 @@
 function alfredExample() {
   // Instantiate a new config object with the Slack Webhook URL.
-  const config = createConfig('https://hooks.slack.com/services/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')
+  const config = createConfig(YOUR_SLACK_WEBHOOK_HERE)
 
   // Set parameters.
-  config.dataSheet = 'Data' // Set name of the sheet containing data.
-  config.messageSheet = 'Messages' // Set name of the sheet containing messages.
-  config.dobColumnKey = 'DOB' // Birthdate column key.
-  config.annivColumnKey = 'Joining' // Joining Date/Anniversary column key.
-  config.namesColumnKey = 'rtCamper' // Names column key.
+  config.dataSheet = DATA_SHEET_NAME_HERE // Set name of the sheet containing data.
+  config.messageSheet = MESSAGE_SHEET_NAME_HERE // Set name of the sheet containing messages.
+  config.dobColumnKey = DOB_COLUMN_KEY_HERE // Birthdate column key.
+  config.annivColumnKey = JOINING_DATE_KEY_HERE // Joining Date/Anniversary column key.
+  config.namesColumnKey = NAMES_KEY_HERE // Names column key.
   const date = new Date() // Init a date object.
   date.setDate(date.getDate() - 1) // Example: match events for yesterday.
   config.dateToMatch = date // Set date.
 
   // Configure messages.
-  config.birthdayHeader = 'Birthday Bash!'
-  config.birthdayImage = 'https://hooks.slack.com/services/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'
-  config.birthdayTitle = 'Today, these rtCampers are celebrating their birthdays :birthday::'
-  config.anniversaryHeader = 'Cheers to another year at rtCamp!'
-  config.anniversaryImage = 'https://i.pinimg.com/736x/53/62/20/536220dd51e9c770b986ba364c13cf27.jpg'
-  config.anniversaryTitle = 'These rtCampers are celebrating their work anniversary today :partying_face::'
+  config.birthdayHeader = BIRTHDAY_HEADER_HERE
+  config.birthdayImage = BIRTHDAY_IMAGE_URL_HERE
+  config.birthdayTitle = BIRTHDAY_MESSAGE_TITLE_HERE // supports markdown.
+  config.anniversaryHeader = ANNIVERSARY_HEADER_HERE
+  config.anniversaryImage = ANNIVERSARY_IMAGE_URL_HERE
+  config.anniversaryTitle = ANNIVERSARY_MESSAGE_TITLE_HERE // supports markdown.
 
   // Run Alfred.
   runAlfred(config);
