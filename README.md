@@ -1,8 +1,15 @@
-# Alfred Slack Bot
+# Alfred Slack Bot 
+
 ### Your personal slack butler 🤵‍♂️ 
 Alfred helps you to automatically send birthday and anniversary wishes on Slack using Google App Script, Google Triggers, and Google Sheets.
 
+<a href="https://slack.com/oauth/v2/authorize?client_id=2618518958503.2630472038933&scope=chat:write,incoming-webhook&user_scope="><img alt="Add to Slack" height="30" width="100" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
+
 ## Getting Started
+1. [Install](https://slack.com/oauth/v2/authorize?client_id=2618518958503.2630472038933&scope=chat:write,incoming-webhook&user_scope=) the app in your Slack workspace
+2. Create an Incoming Slack Webhook [Learn more](https://api.slack.com/messaging/webhooks)
+3. Create a Google Script for your Google Sheet 
+4. Create a file and use the `alfredExample()` as a reference
 ```js
 function alfredExample() {
   // Instantiate a new config object with the Slack Webhook URL.
@@ -30,9 +37,7 @@ function alfredExample() {
   runAlfred(config);
 }
 ```
-## Docs
-### `Alfred.main()`
-Run Alfred and send message(s)
+### To setup automatic messaging, use Google Triggers ([Time-driven Google Timers](https://developers.google.com/apps-script/guides/triggers/installable#time-driven_triggers))
 
 ### `Alfred.setWebhook( SLACK_WEBHOOK )`
 Set Slack Webhook
