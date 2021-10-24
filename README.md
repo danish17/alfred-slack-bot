@@ -38,21 +38,3 @@ function alfredExample() {
 }
 ```
 ### To setup automatic messaging, use Google Triggers ([Time-driven Google Timers](https://developers.google.com/apps-script/guides/triggers/installable#time-driven_triggers))
-
-### `Alfred.setWebhook( SLACK_WEBHOOK )`
-Set Slack Webhook
-```
-// Example
-function fooBar() {
-  Alfred.setSlackWebhook( 'https://hooks.slack.com/services/XYZ987/1234/ABCD' );
-  Alfred.main();
-}
-```
-
-## Files
-- `Run.gs` - Main runner
-- `Core.gs` - Core functions to handle data
-- `Slack.gs` - Slack-related functions to post wishes
-- `Config.gs` - Configuration file
-
-### Script ID: `1u4gU_yqTtdvhckO5JymTXz87MDKerxg8jc2bPeO4x6ATRS8O7cEs7eoj`
