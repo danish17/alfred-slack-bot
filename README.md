@@ -38,3 +38,5 @@ function alfredExample() {
 }
 ```
 ### To setup automatic messaging, use Google Triggers ([Time-driven Google Timers](https://developers.google.com/apps-script/guides/triggers/installable#time-driven_triggers))
+
+![](https://danishshakeel.me/wp-content/uploads/2021/10/Screenshot-2021-10-24-at-7.28.03-PM.png)
