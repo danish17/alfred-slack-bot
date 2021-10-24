@@ -1,0 +1,30 @@
+{
+  "name": "alfred-slack-bot",
+  "version": "1.0.0",
+  "description": "Your Slack Butler",
+  "main": "Run.gs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"fix": "standard --fix Slack.gs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danish17/alfred-slack-bot.git"
+  },
+  "keywords": [
+    "slack-bot",
+    "slack",
+    "bot",
+    "gs",
+    "google-script"
+  ],
+  "author": "Danish Shakeel",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/danish17/alfred-slack-bot/issues"
+  },
+  "homepage": "https://github.com/danish17/alfred-slack-bot#readme",
+  "devDependencies": {
+    "standard": "^16.0.4"
+  }
+}
