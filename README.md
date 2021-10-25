@@ -14,16 +14,16 @@ Alfred helps you to automatically send birthday and anniversary wishes on Slack 
 ```js
 function alfredExample() {
   // Instantiate a new config object with the Slack Webhook URL.
-  const config = createConfig(PASTE_THE_WEBHOOK_URL_HERE)
+  const config = Alfred.createConfig('https://hooks.slack.com/services/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')
 
   // Set parameters.
   config.dataSheet = 'Data' // Set name of the sheet containing data.
   config.messageSheet = 'Messages' // Set name of the sheet containing messages.
   config.dobColumnKey = 'DOB' // Birthdate column key.
   config.annivColumnKey = 'Joining' // Joining Date/Anniversary column key.
-  config.namesColumnKey = 'E-Name' // Names column key.
+  config.namesColumnKey = 'rtCamper' // Names column key.
   const date = new Date() // Init a date object.
-  date.setDate(date.getDate() - 1) // Example: match events for yesterday.
+  date.setDate(date.getDate() - 3) // Example: match events for yesterday.
   config.dateToMatch = date // Set date.
 
   // Configure messages.
@@ -35,7 +35,8 @@ function alfredExample() {
   config.anniversaryTitle = 'These folks are celebrating their work anniversary today :partying_face::'
 
   // Run Alfred.
-  runAlfred(config);
+  Alfred.runAlfred(config);
+}
 }
 ```
 ### To setup automatic messaging, use Google Triggers ([Time-driven Google Timers](https://developers.google.com/apps-script/guides/triggers/installable#time-driven_triggers))
