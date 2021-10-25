@@ -5,54 +5,65 @@
  */
 function sendSlackBdayMessage (message, names, config) {
   const payload = {
-    blocks: [
+    "blocks": [
       {
-        type: 'header',
-        text: {
-          type: 'plain_text',
-          text: config.SLACK_CONFIG.BIRTHDAY_HEADER
+        "type": 'header',
+        "text": {
+          "type": 'plain_text',
+          "text": config.SLACK_CONFIG.BIRTHDAY_HEADER
         }
       },
       {
-        type: 'section',
-        text: {
-          type: 'plain_text',
-          emoji: true,
-          text: config.SLACK_CONFIG.BIRTHDAY_TITLE
+        "type": 'section',
+        "text": {
+          "type": 'plain_text',
+          "emoji": true,
+          "text": config.SLACK_CONFIG.BIRTHDAY_TITLE
         }
       },
       {
-        type: 'section',
-        text: {
-          type: 'mrkdwn',
-          text: names
+        "type": 'section',
+        "text": {
+          "type": 'mrkdwn',
+          "text": names
         },
-        accessory: {
-          type: 'image',
-          image_url: config.SLACK_CONFIG.BIRTHDAY_IMAGE_URL,
-          alt_text: 'Birthday Image'
+        "accessory": {
+          "type": 'image',
+          "image_url": config.SLACK_CONFIG.BIRTHDAY_IMAGE_URL,
+          "alt_text": 'Birthday Image'
         }
       },
       {
-        type: 'divider'
-      },
-      {
-        type: 'section',
-        text: {
-          type: 'plain_text',
-          text: message
-        }
-      },
-      {
-        type: 'context',
-        elements: [
-          {
-            type: 'plain_text',
-            text: 'Yours Truly,\nAlfred :man_in_tuxedo:'
-          }
-        ]
+        "type": 'divider'
       }
-    ]
+    ],
+    "attachments": [
+		{
+			"color": "#ED1C46",
+			"blocks": [
+				{
+        "type": 'section',
+        "text": {
+          "type": 'plain_text',
+          "text": message
+        }
+      }
+			]
+		},
+    {
+      "blocks": [
+        {
+          "type": 'context',
+          "elements": [
+            {
+              "type": 'plain_text',
+              "text": 'Yours Truly,\nAlfred :man_in_tuxedo:'
+            }
+          ]
+          }
+      ]
+    }
+	]
   }
 
   const options = {
@@ -72,54 +83,65 @@ function sendSlackBdayMessage (message, names, config) {
  */
 function sendSlackAnniversaryMessage (message, names, config) {
   const payload = {
-    blocks: [
+    "blocks": [
       {
-        type: 'header',
-        text: {
-          type: 'plain_text',
-          text: config.SLACK_CONFIG.ANNIVERSARY_HEADER
+        "type": "header",
+        "text": {
+          "type": "plain_text",
+          "text": config.SLACK_CONFIG.ANNIVERSARY_HEADER
         }
       },
       {
-        type: 'section',
-        text: {
-          type: 'plain_text',
-          emoji: true,
-          text: config.SLACK_CONFIG.ANNIVERSARY_TITLE
+        "type": "section",
+        "text": {
+          "type": "plain_text",
+          "emoji": true,
+          "text": config.SLACK_CONFIG.ANNIVERSARY_TITLE
         }
       },
       {
-        type: 'section',
-        text: {
-          type: 'mrkdwn',
-          text: names
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": names
         },
-        accessory: {
-          type: 'image',
-          image_url: config.SLACK_CONFIG.ANNIVERSARY_IMAGE_URL,
-          alt_text: 'Anniversary Image'
+        "accessory": {
+          "type": "image",
+          "image_url": config.SLACK_CONFIG.ANNIVERSARY_IMAGE_URL,
+          "alt_text": "Anniversary Image"
         }
-            },
+        },
       {
-        type: 'divider'
-      },
-      {
-        type: 'section',
-        text: {
-          type: 'plain_text',
-          text: message
-        }
-      },
-      {
-        type: 'context',
-        elements: [
-          {
-            type: 'plain_text',
-            text: 'Yours Truly,\nAlfred :man_in_tuxedo:'
-          }
-        ]
+        type: "divider"
       }
-    ]
+    ],
+    "attachments": [
+		{
+			"color": "#1C7AED",
+			"blocks": [
+				{
+        "type": "section",
+        "text": {
+          "type": "plain_text",
+          "text": message
+        }
+      }
+			]
+		},
+    {
+      "blocks": [
+        {
+          "type": "context",
+          "elements": [
+            {
+              "type": "plain_text",
+              "text": "Yours Truly,\nAlfred :man_in_tuxedo:"
+            }
+          ]
+          }
+      ]
+    }
+	]
   }
 
   const options = {
