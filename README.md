@@ -37,7 +37,6 @@ function alfredExample() {
   // Run Alfred.
   Alfred.runAlfred(config);
 }
-}
 ```
 ### To setup automatic messaging, use Google Triggers ([Time-driven Google Timers](https://developers.google.com/apps-script/guides/triggers/installable#time-driven_triggers))
 
