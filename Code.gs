@@ -173,8 +173,10 @@ function getEvents (eventsData, date, key) {
  * @param {string} key - Key for the names col.
  */
 function getRecipientNames (eventsData, key) {
-  const namesArr = eventsData.map(event => event[key])
-  const namesList = namesArr.join('\n')
+  var namesArr = eventsData.map(event => event[key])
+  namesArr = namesArr.map( name => '*' + name + '*') // bold names.
+
+  const namesList = replaceNames( '<names>', namesArr, '<names>') // get list of names separated by commas.
 
   return namesList
 }
