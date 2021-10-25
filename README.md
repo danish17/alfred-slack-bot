@@ -23,7 +23,7 @@ function alfredExample() {
   config.annivColumnKey = 'Joining' // Joining Date/Anniversary column key.
   config.namesColumnKey = 'rtCamper' // Names column key.
   const date = new Date() // Init a date object.
-  date.setDate(date.getDate() - 3) // Example: match events for yesterday.
+  date.setDate(date.getDate() - 1) // Example: match events for yesterday.
   config.dateToMatch = date // Set date.
 
   // Configure messages.
