@@ -14,7 +14,7 @@ Alfred helps you to automatically send birthday and anniversary wishes on Slack 
 ```js
 function alfredExample() {
   // Instantiate a new config object with the Slack Webhook URL.
-  const config = Alfred.createConfig('https://hooks.slack.com/services/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')
+  const config = Alfred.createConfig('https://hooks.slack.com/services/T000000000000/B0AAAAAAAAA/ABCDEXYZ123456')
 
   // Set parameters.
   config.dataSheet = 'Data' // Set name of the sheet containing data.
