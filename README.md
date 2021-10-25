@@ -1,12 +1,12 @@
 # Alfred Slack Bot 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/acee0665d7414dd98b6b8959f1d22852)](https://www.codacy.com/gh/danish17/alfred-slack-bot/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=danish17/alfred-slack-bot&amp;utm_campaign=Badge_Grade) 
-<a href="https://slack.com/oauth/v2/authorize?client_id=2618518958503.2630472038933&scope=chat:write,incoming-webhook&user_scope="><img alt="Add to Slack" height="20" width="70" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
+<a href="https://slack.com/oauth/v2/authorize?scope=incoming-webhook chat:write&client_id=2618518958503.2630472038933"><img alt="Add to Slack" height="20" width="70" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
 
 ### Your personal slack butler 🤵‍♂️ 
 Alfred helps you to automatically send birthday and anniversary wishes on Slack using Google App Script, Google Triggers, and Google Sheets.
 
 ## Getting Started
-1. [Install](https://slack.com/oauth/v2/authorize?client_id=2618518958503.2630472038933&scope=chat:write,incoming-webhook&user_scope=) the app in your Slack workspace
+1. [Install](https://slack.com/oauth/v2/authorize?scope=incoming-webhook chat:write&client_id=2618518958503.2630472038933) the app in your Slack workspace
 2. Create an Incoming Slack Webhook [Learn more](https://api.slack.com/messaging/webhooks)
 3. Create a Google Script for your Google Sheet using `Tools > Script Editor`
 5. Add a Library - Import Alfred using the ID - `1u4gU_yqTtdvhckO5JymTXz87MDKerxg8jc2bPeO4x6ATRS8O7cEs7eoj` 
