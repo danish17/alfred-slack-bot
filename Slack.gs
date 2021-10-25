@@ -44,7 +44,7 @@ function sendSlackBdayMessage (message, names, config) {
 				{
         "type": 'section',
         "text": {
-          "type": 'plain_text',
+          "type": 'mrkdwn',
           "text": message
         }
       }
@@ -122,7 +122,7 @@ function sendSlackAnniversaryMessage (message, names, config) {
 				{
         "type": "section",
         "text": {
-          "type": "plain_text",
+          "type": "mrkdwn",
           "text": message
         }
       }
