@@ -6,7 +6,7 @@
 Alfred helps you to automatically send birthday and anniversary wishes on Slack using Google Apps Script, Google Triggers, Google Sheets, and Slack API.
 
 ## Getting Started
-### ➡️ In-depth Tutorial: https://danishshakeel.me/alfred-slack-bot-to-post-birthday-and-anniversary-messages/
+### ➡️ In-depth Tutorial: https://alfred.danishshakeel.me/read
 1. [Authorize](https://slack.com/oauth/v2/authorize?scope=incoming-webhook,chat:write&client_id=2618518958503.2630472038933) the app to your Slack workspace
 2. Copy the Incoming Webhook URL
 3. Create a Google Script for your Google Sheet using `Tools > Script Editor`
