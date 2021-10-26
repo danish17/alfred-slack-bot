@@ -3,7 +3,7 @@
 <a href="https://slack.com/oauth/v2/authorize?scope=incoming-webhook chat:write&client_id=2618518958503.2630472038933"><img alt="Add to Slack" height="20" width="70" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
 
 ### Your personal slack butler 🤵‍♂️ 
-Alfred helps you to automatically send birthday and anniversary wishes on Slack using Google App Script, Google Triggers, and Google Sheets.
+Alfred helps you to automatically send birthday and anniversary wishes on Slack using Google Apps Script, Google Triggers, Google Sheets, and Slack API.
 
 ## Getting Started
 ### ➡️ In-depth Tutorial: https://danishshakeel.me/alfred-slack-bot-to-post-birthday-and-anniversary-messages/
