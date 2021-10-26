@@ -2,7 +2,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/acee0665d7414dd98b6b8959f1d22852)](https://www.codacy.com/gh/danish17/alfred-slack-bot/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=danish17/alfred-slack-bot&amp;utm_campaign=Badge_Grade) 
 <a href="https://slack.com/oauth/v2/authorize?scope=incoming-webhook chat:write&client_id=2618518958503.2630472038933"><img alt="Add to Slack" height="20" width="70" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
 
-### Your personal slack butler 🤵‍♂️ 
+### Your personal slack butler
 Alfred helps you to automatically send birthday and anniversary wishes on Slack using Google Apps Script, Google Triggers, Google Sheets, and Slack API.
 
 ## Getting Started
